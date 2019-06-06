@@ -12,14 +12,14 @@ from gnuradio import gr, blocks
 TestResultData = collections.namedtuple('TestResultData', ['SF', 'CR', 'passing', 'total', 'rate'])
 
 class ExamplifyLive:
-    def __init__(self, spreadingFactor = 7, codingRate = "4/5",  gains = [10, 20, 20]):
+    def __init__(self, spreadingFactor = 9, codingRate = "4/7",  gains = [10, 20, 20]):
         ##################################################
         # Variables                                      #
         ##################################################
-        self.target_freq     = 868.1e6
+        self.target_freq     = 915.1e6
         self.sf              = spreadingFactor  # 7 8 9 10 11 12
         self.samp_rate       = 1e6
-        self.capture_freq    = 868.0e6
+        self.capture_freq    = 915.0e6
         self.bw              = 125e3
         #self.symbols_per_sec = self.bw  / (2**self.sf)
         self.offset          = -(self.capture_freq - self.target_freq)
